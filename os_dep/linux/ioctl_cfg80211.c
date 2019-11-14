@@ -1232,17 +1232,20 @@ void rtw_cfg80211_indicate_disconnect(_adapter *padapter, u16 reason, u8 locally
 			rtw_cfg80211_connect_result(pwdev, NULL, NULL, 0, NULL, 0,
 				reason, GFP_ATOMIC);
 		} else {
-			RTW_INFO(FUNC_ADPT_FMT" call cfg80211_disconnected\n", FUNC_ADPT_ARG(padapter));
-			rtw_cfg80211_disconnected(pwdev, reason, NULL, 0, locally_generated, GFP_ATOMIC);
+				RTW_INFO(FUNC_ADPT_FMT" call cfg80211_disconnected\n", FUNC_ADPT_ARG(padapter));
+				rtw_cfg80211_disconnected(pwdev, reason, NULL, 0, locally_generated, GFP_ATOMIC);
+
+				cfg80211_connect_result(padapter->pnetdev, NULL, NULL, 0, NULL, 0,
+						WLAN_STATUS_UNSPECIFIED_FAILURE, GFP_ATOMIC);
 		}
 		#endif
+
 	}
 
 	rtw_wdev_free_connect_req(pwdev_priv);
 
 	_exit_critical_bh(&pwdev_priv->connect_req_lock, &irqL);
 }
-
 
 #ifdef CONFIG_AP_MODE
 static int rtw_cfg80211_ap_set_encryption(struct net_device *dev, struct ieee_param *param)
@@ -1286,7 +1289,6 @@ static int rtw_cfg80211_ap_set_encryption(struct net_device *dev, struct ieee_pa
 
 		goto exit;
 	}
-
 
 	if (strcmp(param->u.crypt.alg, "WEP") == 0 && (psta == NULL)) {
 		RTW_INFO("r871x_set_encryption, crypt.alg = WEP\n");
