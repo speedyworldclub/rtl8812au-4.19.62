@@ -9,3 +9,6 @@ modules.order
 .cache.mk
 *.mod
 *.o.d
+*.orig
+*.rej
+
