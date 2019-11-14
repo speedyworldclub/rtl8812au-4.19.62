@@ -21,9 +21,10 @@
  * Public  General Config
  */
 #define AUTOCONF_INCLUDED
-#define RTL871X_MODULE_NAME "8812AU"
+#define RTL871X_MODULE_NAME "88XXau"
+#ifndef DRV_NAME
 #define DRV_NAME "rtl8812au"
-
+#endif
 
 #define CONFIG_USB_HCI
 
