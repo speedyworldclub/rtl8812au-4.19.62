@@ -162,8 +162,7 @@ sudo ln -s /lib/modules/$(uname -r)/build/arch/arm /lib/modules/$(uname -r)/buil
 ```
 
 ### Blacklist:
-```
-/bin/blacklist.conf
+create a file /bin/blacklist.conf to block default Armbian driver
 
 ```
 blacklist rtl8xxxu                                                                                 
