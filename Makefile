@@ -37,8 +37,8 @@ EXTRA_LDFLAGS += --strip-debug
 
 ########################## WIFI IC ############################
 CONFIG_RTL8812A = y
-CONFIG_RTL8821A = y
-CONFIG_RTL8814A = y
+CONFIG_RTL8821A = n
+CONFIG_RTL8814A = n
 ######################### Interface ###########################
 CONFIG_USB_HCI = y
 ########################## Features ###########################
@@ -104,8 +104,8 @@ CONFIG_RTW_SDIO_PM_KEEP_POWER = y
 ###################### MP HW TX MODE FOR VHT #######################
 CONFIG_MP_VHT_HW_TX_MODE = y
 ###################### Platform Related #######################
-CONFIG_PLATFORM_I386_PC = y
-CONFIG_PLATFORM_ARM_RPI = n
+CONFIG_PLATFORM_I386_PC = n
+CONFIG_PLATFORM_ARM_RPI = y
 CONFIG_PLATFORM_ARM64_RPI = n
 CONFIG_PLATFORM_ARM_JET_NANO = n
 CONFIG_PLATFORM_ANDROID_X86 = n
