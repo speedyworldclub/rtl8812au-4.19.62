@@ -163,6 +163,9 @@ sudo ln -s /lib/modules/$(uname -r)/build/arch/arm /lib/modules/$(uname -r)/buil
 
 ### Blacklist:
 ```
+/bin/blacklist.conf
+
+```
 blacklist rtl8xxxu                                                                                 
 blacklist 88XXau 
 blacklist 88x2bu
