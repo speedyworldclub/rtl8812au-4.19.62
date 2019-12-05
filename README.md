@@ -161,10 +161,21 @@ sudo sed -i 's/-msoft-float//' /lib/modules/$(uname -r)/build/arch/arm/Makefile
 sudo ln -s /lib/modules/$(uname -r)/build/arch/arm /lib/modules/$(uname -r)/build/arch/armv7l
 ```
 
+### Blacklist:
+```
+blacklist rtl8xxxu                                                                                 
+blacklist 88XXau 
+blacklist 88x2bu
+```
+
+
+### Possible Raspbian Issue:
+```
 In addition, if you receive an error message about `unrecognized command line option ‘-mgeneral-regs-only’` (i.e., Raspbian Buster), you will need to run the following commands:
 ```
 $ sed -i 's/^dkms build/ARCH=arm dkms build/' dkms-install.sh
 $ sed -i 's/^MAKE="/MAKE="ARCH=arm\ /' dkms.conf
+
 ```
 
 For setting monitor mode
