@@ -184,7 +184,7 @@ blacklist 88x2bu
 ```sh
 cd /root
 git clone https://github.com/speedyworldclub/rtl8812au
-cd rtl8812au
+cd rtl8812au-ARM-4.19
 make
 make install
 sudo apt-get install build-essential dkms 
