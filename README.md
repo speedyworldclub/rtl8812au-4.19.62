@@ -180,6 +180,26 @@ blacklist 88XXau
 blacklist 88x2bu
 ```
 
+### Steps
+```sh
+cd /root
+git clone https://github.com/speedyworldclub/rtl8812au
+cd rtl8812au
+make
+sudo insmod 8812au.ko
+sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo depmod
+sudo apt-get install build-essential dkms 
+cd /root
+cp -r rtl8812au /usr/src/8812au-5.6.4.2
+dkms add -m 8812au -v 5.6.4.2
+dkms build -m 8812au -v 5.6.4.2
+dkms install -m 8812au -v 5.6.4.2
+sudo dkms status
+echo 8812au | sudo tee -a /etc/modules
+```
+
+
 
 ### Possible Raspbian Issue:
 ```
