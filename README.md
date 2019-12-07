@@ -185,17 +185,15 @@ blacklist 88x2bu
 cd /root
 git clone https://github.com/speedyworldclub/rtl8812au-ARM-4.19
 cd rtl8812au-ARM-4.19
-
 sudo cp /lib/modules/$(uname -r)/build/arch/arm/Makefile /lib/modules/$(uname -r)/build/arch/arm/Makefile.$(date +%Y%m%d%H%M)
 sudo sed -i 's/-msoft-float//' /lib/modules/$(uname -r)/build/arch/arm/Makefile
 #sudo ln -s /lib/modules/$(uname -r)/build/arch/arm /lib/modules/$(uname -r)/build/arch/armv7l
-
 make
 make install
 sudo apt-get install build-essential dkms 
 sudo ./dkms-install.sh
 sudo dkms status
-echo 8812au | sudo tee -a /etc/modules
+#echo 8812au | sudo tee -a /etc/modules
 ```
 
 
