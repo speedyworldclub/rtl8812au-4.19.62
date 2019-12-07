@@ -104,6 +104,16 @@ This driver can be installed using [DKMS]. This is a system which will automatic
 $ sudo apt-get install dkms
 ```
 
+
+### ARM architecture tweak for this driver (this solves compilation problem of this driver for armhf):
+```
+sudo cp /lib/modules/$(uname -r)/build/arch/arm/Makefile /lib/modules/$(uname -r)/build/arch/arm/Makefile.$(date +%Y%m%d%H%M)
+sudo sed -i 's/-msoft-float//' /lib/modules/$(uname -r)/build/arch/arm/Makefile
+sudo ln -s /lib/modules/$(uname -r)/build/arch/arm /lib/modules/$(uname -r)/build/arch/armv7l
+```
+
+
+
 ### Installation of Driver
 In order to install the driver open a terminal in the directory with the source code and execute the following command:
 ```
