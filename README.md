@@ -193,7 +193,6 @@ sudo sed -i 's/-msoft-float//' /lib/modules/$(uname -r)/build/arch/arm/Makefile
 make
 make install
 sudo apt-get install build-essential dkms 
-cd /root
 sudo ./dkms-install.sh
 sudo dkms status
 echo 8812au | sudo tee -a /etc/modules
