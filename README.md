@@ -142,3 +142,10 @@ at the end of file /etc/NetworkManager/NetworkManager.conf and restart NetworkMa
 sudo service NetworkManager restart
 ```
 
+### Steps
+```sh
+cd /root/rtl8812au
+make
+make install
+sudo ./dkms-install.sh
+```
