@@ -180,6 +180,17 @@ blacklist 88XXau
 blacklist 88x2bu
 ```
 
+
+```sh
+cat <<EOT >> /etc/modprobe.d/blacklist.conf
+blacklist rtl8xxxu
+blacklist 88XXau
+blacklist 88x2bu
+EOT
+```
+
+
+
 ### Steps
 ```sh
 cd /root
